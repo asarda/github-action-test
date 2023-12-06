@@ -26,4 +26,4 @@ jobs:
       env:
         EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-      run: python send_email_params.py
+      run: python send_email_params.py ${{ github.event.client_payload.id }} ${{ github.event.client_payload.body_content }}
