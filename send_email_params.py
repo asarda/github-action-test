@@ -3,6 +3,16 @@ from email.message import EmailMessage
 import os
 import ssl
 import smtplib
+import sys
+
+
+if len(sys.argv) != 3:
+    print("Error: missing arg")
+    sys.exit(1)
+
+id = sys.argv[1]
+body_content = sys.argv[2]
+
 
 load_dotenv()
 email_sender = os.environ["EMAIL_SENDER"]
@@ -10,7 +20,7 @@ email_password = os.environ["EMAIL_PASSWORD"]
 email_reciever = 'asarda@mailinator.com'
 
 subject = "Sent from github actions"
-body = "Hello second test!"
+body = f"Id:{id}:::{body_content}"
 
 em = EmailMessage()
 em['From'] = email_sender
