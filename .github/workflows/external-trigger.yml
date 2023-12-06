@@ -2,7 +2,7 @@ name: Send email on POST request
 
 on:
   repository_dispatch:
-    types: [external-post]
+    types: [external_post]
 
 jobs:
   send-email:
