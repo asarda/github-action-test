@@ -10,7 +10,7 @@ email_password = os.environ["EMAIL_PASSWORD"]
 email_reciever = 'asarda@mailinator.com'
 
 subject = "Sent from github actions"
-body = "Hello!"
+body = "Hello second test!"
 
 em = EmailMessage()
 em['From'] = email_sender
